@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var Addtextfield: UITextField!
     @IBOutlet weak var Remtextfield: UITextField!
@@ -26,6 +26,8 @@ class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         pickerTipo.dataSource = self
         pickerTipo.delegate = self
         tfTipo.inputView = pickerTipo
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     @IBAction func Remfunc(_ sender: Any) {
@@ -65,6 +67,7 @@ class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
                 self.present(alert, animated: true, completion: nil)
                 clearvalores()
+                tableView.reloadData()
                 return
             }
             i += 1
@@ -108,6 +111,7 @@ class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
             self.present(alert, animated: true, completion: nil)
             clearvalores()
+            tableView.reloadData()
             return
         } else {
             let alert = UIAlertController(title: "Alerta", message: "Já existe uma categoria com o nome definido", preferredStyle: .alert)
@@ -163,6 +167,7 @@ class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
                 self.present(alert, animated: true, completion: nil)
                 clearvalores()
+                tableView.reloadData()
                 return
             }
             pos += 1
@@ -192,6 +197,21 @@ class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         pickerTipo.selectRow(Receita.categorias.firstIndex(of: tfTipo.text!) ?? 0, inComponent: 0, animated: false)
         
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Receita.categorias.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriasList", for: indexPath)
+        
+        cell.textLabel?.text = Receita.categorias[indexPath.row]
+        
+        return cell
+    }
+    
+    
+    
     
     
     func clearvalores(){
