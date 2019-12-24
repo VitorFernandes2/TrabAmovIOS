@@ -210,10 +210,6 @@ class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         return cell
     }
     
-    
-    
-    
-    
     func clearvalores(){
         Addtextfield.text = ""
         Remtextfield.text = ""
