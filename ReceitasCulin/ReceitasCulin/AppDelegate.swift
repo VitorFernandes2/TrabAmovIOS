@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ReceitasCulin
 //
-//  Created by test on 23/12/2019.
+//  Created by Joao on 23/12/2019.
 //  Copyright © 2019 Isec. All rights reserved.
 //
 
@@ -11,10 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var listaReceitas : [Receita] = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // TEMP
+        listaReceitas.append(Receita.init(nome: "test", categoria: "String", temporealiz: 2, ingredienes: [], desc: "isto é um teste manhoso"))
+        listaReceitas.append(Receita.init(nome: "testas", categoria: "String", temporealiz: 2, ingredienes: [], desc: "isto é um teste manhoso"))
+        listaReceitas.append(Receita.init(nome: "test2", categoria: "String", temporealiz: 2, ingredienes: [], desc: "isto é um teste manhoso"))
+        
         return true
     }
 

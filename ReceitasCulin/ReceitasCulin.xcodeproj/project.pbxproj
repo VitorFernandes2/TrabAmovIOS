@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		525015B723B19C9A004A46A6 /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525015B623B19C9A004A46A6 /* Receita.swift */; };
 		527AA88E23B0B71E0038070E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AA88D23B0B71E0038070E /* AppDelegate.swift */; };
 		527AA89023B0B71E0038070E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AA88F23B0B71E0038070E /* SceneDelegate.swift */; };
 		527AA89223B0B71E0038070E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AA89123B0B71E0038070E /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		525015B623B19C9A004A46A6 /* Receita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
 		527AA88A23B0B71E0038070E /* ReceitasCulin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceitasCulin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527AA88D23B0B71E0038070E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527AA88F23B0B71E0038070E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				527AA89623B0B7210038070E /* Assets.xcassets */,
 				527AA89823B0B7210038070E /* LaunchScreen.storyboard */,
 				527AA89B23B0B7210038070E /* Info.plist */,
+				525015B623B19C9A004A46A6 /* Receita.swift */,
 			);
 			path = ReceitasCulin;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				527AA89223B0B71E0038070E /* ViewController.swift in Sources */,
 				527AA88E23B0B71E0038070E /* AppDelegate.swift in Sources */,
 				527AA89023B0B71E0038070E /* SceneDelegate.swift in Sources */,
+				525015B723B19C9A004A46A6 /* Receita.swift in Sources */,
 				527AA8A423B0C5A80038070E /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
