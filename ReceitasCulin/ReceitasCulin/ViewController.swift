@@ -113,7 +113,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngIdent", for: indexPath)
         
-        cell.textLabel?.text = Ingredientestemp[indexPath.row].nome
+        let valInt = NSDecimalNumber(decimal: Ingredientestemp[indexPath.row].quant).intValue
+        
+        let output = Ingredientestemp[indexPath.row].nome + "  -  " + String(valInt) + Ingredientestemp[indexPath.row].Uni
+        
+        cell.textLabel?.text = output
         
         return cell
     }
@@ -145,7 +149,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func UpdateIngData(ingret : Ingrediente) {
-        print(3)
+        //print(3)
         Ingredientestemp.append(ingret)
         InfVT.reloadData()
     }
