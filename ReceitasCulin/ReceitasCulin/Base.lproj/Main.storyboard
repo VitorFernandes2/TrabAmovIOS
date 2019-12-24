@@ -97,6 +97,9 @@
                                 <rect key="frame" x="20" y="292" width="286" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="Onvalselect:" destination="pUt-Iq-MD1" eventType="editingDidEnd" id="oWF-49-2Jr"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Novo Valor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dw8-uy-yg1">
                                 <rect key="frame" x="20" y="334" width="286" height="34"/>
@@ -106,6 +109,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPn-yR-qiS">
                                 <rect key="frame" x="334" y="317" width="31" height="30"/>
                                 <state key="normal" title="Edit."/>
+                                <connections>
+                                    <action selector="Editfunc:" destination="pUt-Iq-MD1" eventType="touchUpInside" id="oW4-UU-hGI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-sV-xZg">
                                 <rect key="frame" x="330" y="217" width="35" height="30"/>
@@ -114,6 +120,16 @@
                                     <action selector="Remfunc:" destination="pUt-Iq-MD1" eventType="touchUpInside" id="WPk-dZ-NbB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lista de Categorias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUK-cD-VG5">
+                                <rect key="frame" x="20" y="411" width="183" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CK2-WX-vvj">
+                                <rect key="frame" x="20" y="446" width="374" height="416"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -124,6 +140,7 @@
                             <constraint firstItem="Md4-Ue-bVZ" firstAttribute="leading" secondItem="4sc-ln-RQN" secondAttribute="leading" id="70v-2E-XsV"/>
                             <constraint firstItem="P6r-IW-bIg" firstAttribute="centerY" secondItem="cHL-sV-xZg" secondAttribute="centerY" id="8bL-nN-WJm"/>
                             <constraint firstItem="lgE-J2-Scb" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="9jJ-9h-feb"/>
+                            <constraint firstItem="CK2-WX-vvj" firstAttribute="bottom" secondItem="SdZ-db-dRw" secondAttribute="bottom" id="BD0-LP-Fz0"/>
                             <constraint firstItem="Md4-Ue-bVZ" firstAttribute="trailing" secondItem="lgE-J2-Scb" secondAttribute="trailing" id="BlE-fe-Jaf"/>
                             <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cHL-sV-xZg" secondAttribute="trailing" id="EzQ-vb-6f8"/>
                             <constraint firstItem="pjd-hX-jKe" firstAttribute="top" secondItem="lgE-J2-Scb" secondAttribute="bottom" constant="8" id="Ezf-un-Wuv"/>
@@ -132,8 +149,14 @@
                             <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" secondItem="pjd-hX-jKe" secondAttribute="trailing" constant="212" id="LZN-sS-jsc"/>
                             <constraint firstItem="dw8-uy-yg1" firstAttribute="top" secondItem="Md4-Ue-bVZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Xpt-Fy-eKO"/>
                             <constraint firstItem="cHL-sV-xZg" firstAttribute="top" secondItem="N6t-fl-LG7" secondAttribute="bottom" constant="45" id="Z2r-RK-5qp"/>
+                            <constraint firstItem="CK2-WX-vvj" firstAttribute="top" secondItem="jUK-cD-VG5" secondAttribute="bottom" constant="8" id="cFs-Uq-Okn"/>
+                            <constraint firstItem="jUK-cD-VG5" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="cIf-AB-Z6B"/>
                             <constraint firstItem="dw8-uy-yg1" firstAttribute="trailing" secondItem="Md4-Ue-bVZ" secondAttribute="trailing" id="cSc-sN-6De"/>
+                            <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" secondItem="jUK-cD-VG5" secondAttribute="trailing" constant="211" id="euR-v0-Y0X"/>
+                            <constraint firstItem="jUK-cD-VG5" firstAttribute="top" secondItem="dw8-uy-yg1" secondAttribute="bottom" constant="43" id="kRl-Pg-sHs"/>
                             <constraint firstItem="N6t-fl-LG7" firstAttribute="leading" secondItem="lgE-J2-Scb" secondAttribute="trailing" constant="-87" id="lm7-RF-OJY"/>
+                            <constraint firstItem="CK2-WX-vvj" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="nKB-dO-gLj"/>
+                            <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" secondItem="CK2-WX-vvj" secondAttribute="trailing" constant="20" id="nYW-aE-TZt"/>
                             <constraint firstItem="4sc-ln-RQN" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="pp0-K5-n4a"/>
                             <constraint firstItem="pjd-hX-jKe" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="r0O-Xe-cc8"/>
                             <constraint firstItem="lgE-J2-Scb" firstAttribute="top" secondItem="wXC-AN-b36" secondAttribute="bottom" constant="8" id="rE5-2W-uOL"/>
@@ -152,6 +175,9 @@
                     <connections>
                         <outlet property="Addtextfield" destination="lgE-J2-Scb" id="qPI-JN-chp"/>
                         <outlet property="Remtextfield" destination="P6r-IW-bIg" id="l5B-3c-oNq"/>
+                        <outlet property="newval" destination="dw8-uy-yg1" id="LWj-mJ-EC6"/>
+                        <outlet property="tableView" destination="CK2-WX-vvj" id="PrA-lg-eQz"/>
+                        <outlet property="tfTipo" destination="Md4-Ue-bVZ" id="Sr8-so-04f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgd-9i-EIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
