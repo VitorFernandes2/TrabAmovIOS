@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		525015B723B19C9A004A46A6 /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525015B623B19C9A004A46A6 /* Receita.swift */; };
+		525CD14A23B2CF1300773899 /* IngredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD14923B2CF1300773899 /* IngredViewController.swift */; };
 		5260AE6023B2EF6F00FB64FA /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260AE5F23B2EF6F00FB64FA /* CatViewController.swift */; };
 		527AA88E23B0B71E0038070E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AA88D23B0B71E0038070E /* AppDelegate.swift */; };
 		527AA89023B0B71E0038070E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527AA88F23B0B71E0038070E /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		525015B623B19C9A004A46A6 /* Receita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
+		525CD14923B2CF1300773899 /* IngredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredViewController.swift; sourceTree = "<group>"; };
 		5260AE5F23B2EF6F00FB64FA /* CatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
 		527AA88A23B0B71E0038070E /* ReceitasCulin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceitasCulin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527AA88D23B0B71E0038070E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				527AA88D23B0B71E0038070E /* AppDelegate.swift */,
+				525CD14923B2CF1300773899 /* IngredViewController.swift */,
 				527AA88F23B0B71E0038070E /* SceneDelegate.swift */,
 				5260AE5F23B2EF6F00FB64FA /* CatViewController.swift */,
 				527AA89123B0B71E0038070E /* ViewController.swift */,
@@ -153,6 +156,7 @@
 				527AA89023B0B71E0038070E /* SceneDelegate.swift in Sources */,
 				525015B723B19C9A004A46A6 /* Receita.swift in Sources */,
 				527AA8A423B0C5A80038070E /* TableViewController.swift in Sources */,
+				525CD14A23B2CF1300773899 /* IngredViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
