@@ -8,9 +8,9 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, AtualizaReceita{
 
-    var emptyDoubles: [Receita] = []
+    //var emptyDoubles: [Receita] = []
     let app = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -40,16 +40,16 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReceitasIdent", for: indexPath)
         
         // Configure the cell...
-        var abc : String = " "
+        /*var abc : String = " "
         for c in Receita.categorias{
             abc += c
         }
         
         cell.textLabel?.text = abc
-        cell.detailTextLabel?.text = app.listaReceitas[indexPath.row].categoria
-        
-        /*cell.textLabel?.text = 	app.listaReceitas[indexPath.row].nome
         cell.detailTextLabel?.text = app.listaReceitas[indexPath.row].categoria*/
+        
+        cell.textLabel?.text = 	app.listaReceitas[indexPath.row].nome
+        cell.detailTextLabel?.text = app.listaReceitas[indexPath.row].categoria
         
         return cell
     }
@@ -76,8 +76,6 @@ class TableViewController: UITableViewController {
             // Delete the row from the data source
             let row = indexPath.row
             app.listaReceitas.remove(at: row)
-            //Receita.categorias.append("testf") adicionar
-            //Receita.categorias.remove(at: 2) remover
             
             tableView.reloadData()
             //tableView.deleteRows(at: [indexPath], with: .fade)
@@ -87,6 +85,8 @@ class TableViewController: UITableViewController {
             print(1)
         }    
     }
+    
+
     
 
     /*
@@ -104,14 +104,25 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == "adicionarsegue"{
+            let vc = segue.destination as! ViewController
+            vc.delegateback = self
+            // NECESSARIO , sem isto o protocol do view controler nao funciona
 
+        }
+    }
+    
+
+    func UpdateRData() {
+        print(3)
+       tableView.reloadData()
+    }
+    
 }

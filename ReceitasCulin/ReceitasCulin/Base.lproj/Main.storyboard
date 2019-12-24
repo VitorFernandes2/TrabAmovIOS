@@ -56,19 +56,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGl-Zf-w5J">
-                                <rect key="frame" x="20" y="106" width="190" height="30"/>
+                                <rect key="frame" x="20" y="142" width="190" height="30"/>
                                 <state key="normal" title="TEMP - Adicionar Categoria"/>
+                                <connections>
+                                    <action selector="add:" destination="49k-RH-f4Y" eventType="touchUpInside" id="GFh-GT-2Zc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCK-gD-G6i">
+                                <rect key="frame" x="20" y="218" width="166" height="30"/>
+                                <state key="normal" title="TEMP - Editar Categoria"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaO-Xt-KhY">
+                                <rect key="frame" x="20" y="100" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-nO-nDJ">
+                                <rect key="frame" x="20" y="180" width="186" height="30"/>
+                                <state key="normal" title="TEMP - Remover Categoria"/>
+                                <connections>
+                                    <action selector="Remov:" destination="49k-RH-f4Y" eventType="touchUpInside" id="3Mh-Nx-Ob9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="hGl-Zf-w5J" firstAttribute="leading" secondItem="Pu7-Fe-kfQ" secondAttribute="leading" constant="20" id="DKY-mP-GiB"/>
-                            <constraint firstItem="hGl-Zf-w5J" firstAttribute="top" secondItem="Pu7-Fe-kfQ" secondAttribute="top" constant="18" id="Lsh-V5-xu7"/>
-                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" secondItem="hGl-Zf-w5J" secondAttribute="trailing" constant="204" id="XCE-lp-OBq"/>
+                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="top" secondItem="0Gd-LH-Tgv" secondAttribute="top" constant="180" id="3EM-kP-Lvr"/>
+                            <constraint firstItem="XaO-Xt-KhY" firstAttribute="leading" secondItem="Pu7-Fe-kfQ" secondAttribute="leading" constant="20" id="3d2-Y8-Qdf"/>
+                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2f5-nO-nDJ" secondAttribute="trailing" symbolic="YES" id="8ll-47-FBG"/>
+                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" secondItem="XaO-Xt-KhY" secondAttribute="trailing" constant="20" id="DfY-Eu-jsV"/>
+                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NCK-gD-G6i" secondAttribute="trailing" symbolic="YES" id="RIM-g7-YQB"/>
+                            <constraint firstItem="NCK-gD-G6i" firstAttribute="top" secondItem="2f5-nO-nDJ" secondAttribute="bottom" constant="8" id="d6y-eN-dmr"/>
+                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="leading" secondItem="hGl-Zf-w5J" secondAttribute="leading" id="hXM-wZ-rB8"/>
+                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="leading" secondItem="XaO-Xt-KhY" secondAttribute="leading" id="krf-vq-hFr"/>
+                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="leading" secondItem="NCK-gD-G6i" secondAttribute="leading" id="mGX-SM-sOh"/>
+                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="top" secondItem="hGl-Zf-w5J" secondAttribute="bottom" constant="8" id="vfE-KS-Qqd"/>
+                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hGl-Zf-w5J" secondAttribute="trailing" symbolic="YES" id="wxs-Vs-XbQ"/>
+                            <constraint firstItem="XaO-Xt-KhY" firstAttribute="top" secondItem="Pu7-Fe-kfQ" secondAttribute="top" constant="12" id="yUF-Qq-kuL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pu7-Fe-kfQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Definiçoes" id="o6o-hL-oYG"/>
+                    <connections>
+                        <outlet property="Val" destination="XaO-Xt-KhY" id="qhv-aY-tI3"/>
+                        <outlet property="add" destination="hGl-Zf-w5J" id="sMO-8m-NRz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFK-BY-s88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,7 +109,7 @@
         <!--Adicionar-->
         <scene sceneID="j6R-Dm-ePo">
             <objects>
-                <viewController id="sSx-Yd-DJe" sceneMemberID="viewController">
+                <viewController id="sSx-Yd-DJe" customClass="ViewController" customModule="ReceitasCulin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bUZ-BI-uTU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,8 +219,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Adicionar" id="5jC-72-1qW">
                         <barButtonItem key="backBarButtonItem" title="voltar" id="ZdE-FE-lwv"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IBi-x5-fKS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IBi-x5-fKS">
+                            <connections>
+                                <action selector="BtnPress:" destination="sSx-Yd-DJe" id="yu5-tJ-Xlf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Descrioutlet" destination="rdN-Bu-R1G" id="qQo-AO-jMm"/>
+                        <outlet property="Nameoutlet" destination="bVz-qu-fQm" id="F9B-4s-5hs"/>
+                        <outlet property="Tempoconfoutlet" destination="YZa-y3-80Q" id="3JH-vV-sor"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8I-L0-Jnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
