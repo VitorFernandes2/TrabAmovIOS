@@ -50,7 +50,7 @@
         <!--Categorias-->
         <scene sceneID="gy6-6L-ic3">
             <objects>
-                <viewController id="pUt-Iq-MD1" sceneMemberID="viewController">
+                <viewController id="pUt-Iq-MD1" customClass="CatViewController" customModule="ReceitasCulin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JKV-U6-9Ue">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,6 +69,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6t-fl-LG7">
                                 <rect key="frame" x="219" y="142" width="260.5" height="30"/>
                                 <state key="normal" title="Adi."/>
+                                <connections>
+                                    <action selector="addfunc:" destination="pUt-Iq-MD1" eventType="touchUpInside" id="veT-5J-Tkl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remover Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjd-hX-jKe">
                                 <rect key="frame" x="20" y="180" width="182" height="27"/>
@@ -107,6 +110,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-sV-xZg">
                                 <rect key="frame" x="330" y="217" width="35" height="30"/>
                                 <state key="normal" title="Rem."/>
+                                <connections>
+                                    <action selector="Remfunc:" destination="pUt-Iq-MD1" eventType="touchUpInside" id="WPk-dZ-NbB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -143,69 +149,14 @@
                         <viewLayoutGuide key="safeArea" id="SdZ-db-dRw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Categorias" id="rOa-ac-pJE"/>
+                    <connections>
+                        <outlet property="Addtextfield" destination="lgE-J2-Scb" id="qPI-JN-chp"/>
+                        <outlet property="Remtextfield" destination="P6r-IW-bIg" id="l5B-3c-oNq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgd-9i-EIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="147.82608695652175" y="-316.07142857142856"/>
-        </scene>
-        <!--Definiçoes-->
-        <scene sceneID="tvT-ca-W8s">
-            <objects>
-                <viewController id="49k-RH-f4Y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Gd-LH-Tgv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGl-Zf-w5J">
-                                <rect key="frame" x="20" y="142" width="190" height="30"/>
-                                <state key="normal" title="TEMP - Adicionar Categoria"/>
-                                <connections>
-                                    <action selector="add:" destination="49k-RH-f4Y" eventType="touchUpInside" id="GFh-GT-2Zc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCK-gD-G6i">
-                                <rect key="frame" x="20" y="218" width="166" height="30"/>
-                                <state key="normal" title="TEMP - Editar Categoria"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaO-Xt-KhY">
-                                <rect key="frame" x="20" y="56" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-nO-nDJ">
-                                <rect key="frame" x="20" y="180" width="186" height="30"/>
-                                <state key="normal" title="TEMP - Remover Categoria"/>
-                                <connections>
-                                    <action selector="Remov:" destination="49k-RH-f4Y" eventType="touchUpInside" id="3Mh-Nx-Ob9"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="top" secondItem="0Gd-LH-Tgv" secondAttribute="top" constant="180" id="3EM-kP-Lvr"/>
-                            <constraint firstItem="XaO-Xt-KhY" firstAttribute="leading" secondItem="Pu7-Fe-kfQ" secondAttribute="leading" constant="20" id="3d2-Y8-Qdf"/>
-                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2f5-nO-nDJ" secondAttribute="trailing" symbolic="YES" id="8ll-47-FBG"/>
-                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" secondItem="XaO-Xt-KhY" secondAttribute="trailing" constant="20" id="DfY-Eu-jsV"/>
-                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NCK-gD-G6i" secondAttribute="trailing" symbolic="YES" id="RIM-g7-YQB"/>
-                            <constraint firstItem="NCK-gD-G6i" firstAttribute="top" secondItem="2f5-nO-nDJ" secondAttribute="bottom" constant="8" id="d6y-eN-dmr"/>
-                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="leading" secondItem="hGl-Zf-w5J" secondAttribute="leading" id="hXM-wZ-rB8"/>
-                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="leading" secondItem="XaO-Xt-KhY" secondAttribute="leading" id="krf-vq-hFr"/>
-                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="leading" secondItem="NCK-gD-G6i" secondAttribute="leading" id="mGX-SM-sOh"/>
-                            <constraint firstItem="2f5-nO-nDJ" firstAttribute="top" secondItem="hGl-Zf-w5J" secondAttribute="bottom" constant="8" id="vfE-KS-Qqd"/>
-                            <constraint firstItem="Pu7-Fe-kfQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hGl-Zf-w5J" secondAttribute="trailing" symbolic="YES" id="wxs-Vs-XbQ"/>
-                            <constraint firstItem="XaO-Xt-KhY" firstAttribute="top" secondItem="Pu7-Fe-kfQ" secondAttribute="top" constant="12" id="yUF-Qq-kuL"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Pu7-Fe-kfQ"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Definiçoes" id="o6o-hL-oYG"/>
-                    <connections>
-                        <outlet property="Val" destination="XaO-Xt-KhY" id="qhv-aY-tI3"/>
-                        <outlet property="add" destination="hGl-Zf-w5J" id="sMO-8m-NRz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SFK-BY-s88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="925" y="-277"/>
         </scene>
         <!--Adicionar-->
         <scene sceneID="j6R-Dm-ePo">
