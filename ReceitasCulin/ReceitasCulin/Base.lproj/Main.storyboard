@@ -31,9 +31,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Receitas" id="Dof-Ay-bRW">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="Xxy-Ci-IGc">
+                        <barButtonItem key="leftBarButtonItem" title="Cat." id="5f7-hv-9Jr">
                             <connections>
-                                <segue destination="49k-RH-f4Y" kind="show" id="cEa-tw-Kaj"/>
+                                <segue destination="pUt-Iq-MD1" kind="show" id="1Nn-Us-hQR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fyY-gW-blN">
@@ -46,6 +46,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2h-R2-LnM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-658" y="45"/>
+        </scene>
+        <!--Categorias-->
+        <scene sceneID="gy6-6L-ic3">
+            <objects>
+                <viewController id="pUt-Iq-MD1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JKV-U6-9Ue">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicionar Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXC-AN-b36">
+                                <rect key="frame" x="20" y="103" width="188" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgE-J2-Scb">
+                                <rect key="frame" x="20" y="138" width="286" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6t-fl-LG7">
+                                <rect key="frame" x="219" y="142" width="260.5" height="30"/>
+                                <state key="normal" title="Adi."/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remover Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjd-hX-jKe">
+                                <rect key="frame" x="20" y="180" width="182" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6r-IW-bIg">
+                                <rect key="frame" x="20" y="215" width="286" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="286" id="jcm-V8-EtS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sc-ln-RQN">
+                                <rect key="frame" x="20" y="257" width="153" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor Atual" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Md4-Ue-bVZ">
+                                <rect key="frame" x="20" y="292" width="286" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Novo Valor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dw8-uy-yg1">
+                                <rect key="frame" x="20" y="334" width="286" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPn-yR-qiS">
+                                <rect key="frame" x="334" y="317" width="31" height="30"/>
+                                <state key="normal" title="Edit."/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-sV-xZg">
+                                <rect key="frame" x="330" y="217" width="35" height="30"/>
+                                <state key="normal" title="Rem."/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dw8-uy-yg1" firstAttribute="leading" secondItem="Md4-Ue-bVZ" secondAttribute="leading" id="1qH-cn-9j5"/>
+                            <constraint firstItem="wXC-AN-b36" firstAttribute="top" secondItem="SdZ-db-dRw" secondAttribute="top" constant="15" id="2Vg-Fi-jIE"/>
+                            <constraint firstItem="EPn-yR-qiS" firstAttribute="centerX" secondItem="cHL-sV-xZg" secondAttribute="centerX" constant="2" id="2di-FJ-bIv"/>
+                            <constraint firstItem="N6t-fl-LG7" firstAttribute="top" secondItem="SdZ-db-dRw" secondAttribute="top" constant="54" id="2tr-MG-a1G"/>
+                            <constraint firstItem="Md4-Ue-bVZ" firstAttribute="leading" secondItem="4sc-ln-RQN" secondAttribute="leading" id="70v-2E-XsV"/>
+                            <constraint firstItem="P6r-IW-bIg" firstAttribute="centerY" secondItem="cHL-sV-xZg" secondAttribute="centerY" id="8bL-nN-WJm"/>
+                            <constraint firstItem="lgE-J2-Scb" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="9jJ-9h-feb"/>
+                            <constraint firstItem="Md4-Ue-bVZ" firstAttribute="trailing" secondItem="lgE-J2-Scb" secondAttribute="trailing" id="BlE-fe-Jaf"/>
+                            <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cHL-sV-xZg" secondAttribute="trailing" id="EzQ-vb-6f8"/>
+                            <constraint firstItem="pjd-hX-jKe" firstAttribute="top" secondItem="lgE-J2-Scb" secondAttribute="bottom" constant="8" id="Ezf-un-Wuv"/>
+                            <constraint firstItem="EPn-yR-qiS" firstAttribute="leading" secondItem="Md4-Ue-bVZ" secondAttribute="trailing" constant="28" id="G1s-h2-8ds"/>
+                            <constraint firstItem="EPn-yR-qiS" firstAttribute="top" secondItem="cHL-sV-xZg" secondAttribute="bottom" constant="70" id="L5C-lK-KNP"/>
+                            <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" secondItem="pjd-hX-jKe" secondAttribute="trailing" constant="212" id="LZN-sS-jsc"/>
+                            <constraint firstItem="dw8-uy-yg1" firstAttribute="top" secondItem="Md4-Ue-bVZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Xpt-Fy-eKO"/>
+                            <constraint firstItem="cHL-sV-xZg" firstAttribute="top" secondItem="N6t-fl-LG7" secondAttribute="bottom" constant="45" id="Z2r-RK-5qp"/>
+                            <constraint firstItem="dw8-uy-yg1" firstAttribute="trailing" secondItem="Md4-Ue-bVZ" secondAttribute="trailing" id="cSc-sN-6De"/>
+                            <constraint firstItem="N6t-fl-LG7" firstAttribute="leading" secondItem="lgE-J2-Scb" secondAttribute="trailing" constant="-87" id="lm7-RF-OJY"/>
+                            <constraint firstItem="4sc-ln-RQN" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="pp0-K5-n4a"/>
+                            <constraint firstItem="pjd-hX-jKe" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="r0O-Xe-cc8"/>
+                            <constraint firstItem="lgE-J2-Scb" firstAttribute="top" secondItem="wXC-AN-b36" secondAttribute="bottom" constant="8" id="rE5-2W-uOL"/>
+                            <constraint firstItem="wXC-AN-b36" firstAttribute="leading" secondItem="SdZ-db-dRw" secondAttribute="leading" constant="20" id="roB-dM-1DU"/>
+                            <constraint firstItem="4sc-ln-RQN" firstAttribute="top" secondItem="P6r-IW-bIg" secondAttribute="bottom" constant="8" id="sHS-qG-itG"/>
+                            <constraint firstItem="P6r-IW-bIg" firstAttribute="trailing" secondItem="lgE-J2-Scb" secondAttribute="trailing" id="tju-Au-Zgf"/>
+                            <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" secondItem="N6t-fl-LG7" secondAttribute="trailing" constant="-65.5" id="uL9-Wb-g4H"/>
+                            <constraint firstItem="P6r-IW-bIg" firstAttribute="leading" secondItem="pjd-hX-jKe" secondAttribute="leading" id="uhx-6Q-nIr"/>
+                            <constraint firstItem="Md4-Ue-bVZ" firstAttribute="top" secondItem="4sc-ln-RQN" secondAttribute="bottom" constant="8" id="vdf-I5-eWB"/>
+                            <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" secondItem="4sc-ln-RQN" secondAttribute="trailing" constant="241" id="vy2-Y3-5cN"/>
+                            <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wXC-AN-b36" secondAttribute="trailing" symbolic="YES" id="yXr-Ow-Rbn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SdZ-db-dRw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Categorias" id="rOa-ac-pJE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgd-9i-EIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.82608695652175" y="-316.07142857142856"/>
         </scene>
         <!--Definiçoes-->
         <scene sceneID="tvT-ca-W8s">
@@ -67,7 +168,7 @@
                                 <state key="normal" title="TEMP - Editar Categoria"/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaO-Xt-KhY">
-                                <rect key="frame" x="20" y="100" width="374" height="34"/>
+                                <rect key="frame" x="20" y="56" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -104,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFK-BY-s88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="227.536231884058" y="-278.57142857142856"/>
+            <point key="canvasLocation" x="925" y="-277"/>
         </scene>
         <!--Adicionar-->
         <scene sceneID="j6R-Dm-ePo">
