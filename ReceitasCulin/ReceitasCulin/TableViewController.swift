@@ -12,6 +12,7 @@ class TableViewController: UITableViewController, AtualizaReceita{
 
     //var emptyDoubles: [Receita] = []
     let app = UIApplication.shared.delegate as! AppDelegate
+    var pos : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +59,13 @@ class TableViewController: UITableViewController, AtualizaReceita{
         //let row = indexPath.row
         //let nome = app.listaReceitas[indexPath.row]
         
-        performSegue(withIdentifier: "adicionarsegue", sender: nil)
+        pos = String(indexPath.row)
+        
+        //performSegue(withIdentifier: "editviewsegue", sender: nil)
+        performSegue(withIdentifier: "editviewsegue", sender: pos)
     }
 
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -79,10 +84,10 @@ class TableViewController: UITableViewController, AtualizaReceita{
             
             tableView.reloadData()
             //tableView.deleteRows(at: [indexPath], with: .fade)
-            print(2)
+            //print(2)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-            print(1)
+            //print(1)
         }    
     }
     
@@ -116,6 +121,12 @@ class TableViewController: UITableViewController, AtualizaReceita{
             vc.delegateback = self
             // NECESSARIO , sem isto o protocol do view controler nao funciona
 
+        }
+        
+        if segue.destination is EditViewController
+        {
+            let vc = segue.destination as? EditViewController
+            vc?.posicao = self.pos
         }
     }
     
