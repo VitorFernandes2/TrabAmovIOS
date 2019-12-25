@@ -124,7 +124,7 @@
                                 <rect key="frame" x="232" y="220" width="150" height="30"/>
                                 <state key="normal" title="Adicionar Ingrediente:"/>
                                 <connections>
-                                    <action selector="onaddingbtn:" destination="yt3-Io-zlh" eventType="touchUpInside" id="fgy-Kl-Car"/>
+                                    <segue destination="6dk-mh-F2H" kind="show" identifier="editingsegue" id="Vc0-Kx-rfX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -593,4 +593,7 @@
             <point key="canvasLocation" x="-1577" y="45"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pbc-Ef-zHn"/>
+    </inferredMetricsTieBreakers>
 </document>

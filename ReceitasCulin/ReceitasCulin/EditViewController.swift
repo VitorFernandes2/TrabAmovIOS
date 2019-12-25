@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource{
+class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource, IngreReturns{
     
     
     // editviewsegue - nome do segue
@@ -90,6 +90,47 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }*/
     
     func saveverif() -> Bool{
+        
+        let nome = Nomeoutlet.text
+        let categoria = Categoriaoutlet.text
+        let tempconf = TempodeConfecaooutlet.text
+        let Decri = Decricaooutlet.text
+        let pos : Int? = Int(posicao)
+        
+        if(nome == "" || categoria == "" || tempconf == "" || Decri == ""){
+            let alert = UIAlertController(title: "Alerta", message: "Obrigatório escrever em todas as caixas de texto", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        let tempo:Double? = Double(tempconf!) // converte pra Int
+        
+        if(tempo == nil){
+            let alert = UIAlertController(title: "Alerta", message: "Entre uma numero valido na caixa de tempo", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default ))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        if(app.listaReceitas[pos!].Ingredientes.count == 0){
+            let alert = UIAlertController(title: "Alerta", message: "Defina ingredientes para a receita", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return false
+            
+        }
+        
+        //edições
+        app.listaReceitas[pos!].nome = nome!
+        app.listaReceitas[pos!].categoria = categoria!
+        app.listaReceitas[pos!].temporealiz = tempo!
+        app.listaReceitas[pos!].desc = Decri!
+        
+        let alert = UIAlertController(title: "Sucesso", message: "Alterações definidas com sucesso", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+        self.present(alert, animated: true, completion: nil)
+        
         return true
     }
     
@@ -133,18 +174,37 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     // Override to support editing the table view.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if(addIngredientebtn.isHidden == true){
-        
             if editingStyle == .delete {
                 // Delete the row from the data source
                 let pos : Int? = Int(posicao)
                 let row = indexPath.row
                 app.listaReceitas[pos!].Ingredientes.remove(at: row)
                 
-                tableView.reloadData()
+                TableViewoutlet.reloadData()
                 
             } else if editingStyle == .insert {
 
             }
         }
     }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "editingsegue"{
+            let vc = segue.destination as! IngredViewController // definir o proprio vew controler... com view controller generis nao encontre o dellegate certo
+            vc.delegateing = self
+            // NECESSARIO , sem isto o protocol do view controler nao funciona
+
+        }
+    }
+    
+    func UpdateIngData(ingret : Ingrediente) {
+        //print(3)
+        let pos : Int? = Int(posicao)
+        app.listaReceitas[pos!].Ingredientes.append(ingret)
+        TableViewoutlet.reloadData()
+    }
+    
 }
