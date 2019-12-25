@@ -122,6 +122,13 @@ class TableViewController: UITableViewController, AtualizaReceita{
             // NECESSARIO , sem isto o protocol do view controler nao funciona
 
         }
+        if segue.identifier == "editviewsegue"{ // para o editviewcontroller tb tem acesso
+            let vc = segue.destination as! EditViewController
+            vc.delegateback = self
+            // NECESSARIO , sem isto o protocol do view controler nao funciona
+
+        }
+        
         
         if segue.destination is EditViewController
         {

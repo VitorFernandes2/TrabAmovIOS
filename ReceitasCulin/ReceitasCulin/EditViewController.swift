@@ -12,7 +12,6 @@ import UIKit
 
 class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource, IngreReturns{
     
-    
     // editviewsegue - nome do segue
     var posicao:String = ""
     let app = UIApplication.shared.delegate as! AppDelegate
@@ -24,6 +23,7 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var Editbutton: UIBarButtonItem!
     @IBOutlet weak var addIngredientebtn: UIButton!
     let pickerTipo = UIPickerView()
+    var delegateback : AtualizaReceita?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
                 TempodeConfecaooutlet.isUserInteractionEnabled = false
                 Decricaooutlet.isUserInteractionEnabled = false
                 addIngredientebtn.isHidden = true
-                
+                delegateback?.UpdateRData()
             }
             
             return
