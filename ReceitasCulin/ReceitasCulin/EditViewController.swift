@@ -2,7 +2,7 @@
 //  EditViewController.swift
 //  ReceitasCulin
 //
-//  Created by test on 25/12/2019.
+//  Created by Joao on 25/12/2019.
 //  Copyright © 2019 Isec. All rights reserved.
 //
 

@@ -23,11 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        /*// TEMP
-        listaReceitas.append(Receita.init(nome: "test", categoria: "String", temporealiz: 2, ingredienes: [], desc: "isto é um teste manhoso"))
-        listaReceitas.append(Receita.init(nome: "testas", categoria: "String", temporealiz: 2, ingredienes: [], desc: "isto é um teste manhoso"))
-        listaReceitas.append(Receita.init(nome: "test2", categoria: "String", temporealiz: 2, ingredienes: [], desc: "isto é um teste manhoso"))
-        */
         return true
     }
     

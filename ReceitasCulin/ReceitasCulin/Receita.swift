@@ -18,7 +18,7 @@ extension Double {
 
 class Receita : Codable {
     
-    static var categorias = ["Familia","Amigos","Colegas","Empresas","Outros"].sorted()
+    static var categorias = ["Entrada","Sopa","Carne","Peixe","Sobremesa"].sorted()
     var nome : String
     var categoria : String
     var temporealiz : Double

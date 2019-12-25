@@ -16,41 +16,58 @@ class TableViewController: UITableViewController, AtualizaReceita{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         //self.navigationItem.rightBarButtonItem = self.editButtonItem
+        print("Tamanho do array : " , app.listaReceitas.count)
     }
 
     // MARK: - Table view data source
 
-    /*override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
-    }*/
+        return Receita.categorias.count
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return app.listaReceitas.count
+        var count = 0
+        for c in app.listaReceitas{
+            
+            if(c.categoria == Receita.categorias[section]){
+                count += 1
+            }
+            
+        }
+        
+        return count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return Receita.categorias[section]
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReceitasIdent", for: indexPath)
         
-        // Configure the cell...
-        /*var abc : String = " "
-        for c in Receita.categorias{
-            abc += c
+        let section = indexPath.section
+        let row = indexPath.row
+        //let contato = itens[categorias[section]]![row]//contacto na linha row, da secao section
+        var pos : Int = 0
+        for c in app.listaReceitas{
+            
+            if(c.categoria == Receita.categorias[section]){
+                if(pos == row){
+                    cell.textLabel?.text = c.nome
+                    cell.detailTextLabel?.text = c.categoria
+                    return cell
+                }else{
+                    pos += 1
+                }
+            }
         }
-        
-        cell.textLabel?.text = abc
-        cell.detailTextLabel?.text = app.listaReceitas[indexPath.row].categoria*/
-        
-        cell.textLabel?.text = 	app.listaReceitas[indexPath.row].nome
-        cell.detailTextLabel?.text = app.listaReceitas[indexPath.row].categoria
+
+        //cell.textLabel?.text = 	app.listaReceitas[indexPath.row].nome
+        //cell.detailTextLabel?.text = app.listaReceitas[indexPath.row].categoria
         
         return cell
     }
@@ -58,56 +75,63 @@ class TableViewController: UITableViewController, AtualizaReceita{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let row = indexPath.row
         //let nome = app.listaReceitas[indexPath.row]
+        let section = indexPath.section
+        let row = indexPath.row
+        var posi : Int = 0
+        var posarray : Int = 0
+        for c in app.listaReceitas{
+            if(c.categoria == Receita.categorias[section]){
+                if(posi == row){
+                    pos = String(posarray)
+                    performSegue(withIdentifier: "editviewsegue", sender: pos)
+                    return
+                }else{
+                    posi += 1
+                }
+            }
+            posarray += 1
+        }
         
-        pos = String(indexPath.row)
         
-        //performSegue(withIdentifier: "editviewsegue", sender: nil)
-        performSegue(withIdentifier: "editviewsegue", sender: pos)
+        //pos = String(indexPath.row)
+        //performSegue(withIdentifier: "editviewsegue", sender: pos)
     }
 
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            
+            let section = indexPath.section
             let row = indexPath.row
+            var posi : Int = 0
+            var posarray : Int = 0
+            for c in app.listaReceitas{
+                if(c.categoria == Receita.categorias[section]){
+                    if(posi == row){
+                        let rowe = posarray
+                        app.listaReceitas.remove(at: rowe)
+                        tableView.reloadData()
+                        return
+                    }else{
+                        posi += 1
+                    }
+                }
+                posarray += 1
+            }
+            
+            
+            /*let row = indexPath.row
             app.listaReceitas.remove(at: row)
             
-            tableView.reloadData()
-            //tableView.deleteRows(at: [indexPath], with: .fade)
-            //print(2)
+            tableView.reloadData()*/
+
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             //print(1)
         }    
     }
-    
-
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-	
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
