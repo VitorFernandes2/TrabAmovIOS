@@ -104,6 +104,23 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             return false
         }
         
+        //verifica categoria
+        var verif : Bool = false
+        for cb in Receita.categorias{
+            if(categoria == cb){
+                verif = true
+                break
+            }
+        }
+        
+        if(verif == false){
+            let alert = UIAlertController(title: "Alerta", message: "Entre uma Categoria valida", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        // ---
+        
         let tempo:Double? = Double(tempconf!) // converte pra Int
         
         if(tempo == nil){
@@ -207,4 +224,7 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         TableViewoutlet.reloadData()
     }
     
+    @IBAction func ontap(_ sender: Any) {
+        view.endEditing(true)
+    }
 }

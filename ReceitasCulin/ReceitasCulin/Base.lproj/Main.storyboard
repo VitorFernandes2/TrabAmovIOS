@@ -86,7 +86,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3N2-3S-edS">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="em Horas (ex 0.3h)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3N2-3S-edS">
                                 <rect key="frame" x="195.5" y="178" width="198.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -133,6 +133,7 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="J59-pQ-HFQ" firstAttribute="trailing" secondItem="yrg-zV-YOU" secondAttribute="trailing" constant="32" id="5WG-gs-1K8"/>
                             <constraint firstItem="yrg-zV-YOU" firstAttribute="bottom" secondItem="J59-pQ-HFQ" secondAttribute="bottom" id="5fw-xZ-slV"/>
@@ -171,6 +172,9 @@
                             <constraint firstItem="J59-pQ-HFQ" firstAttribute="trailing" secondItem="3N2-3S-edS" secondAttribute="trailing" constant="20" id="yHX-S2-H9o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J59-pQ-HFQ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dy8-dl-rt5" appends="YES" id="c3a-rd-j2g"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="JpC-uV-iAo">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="1fl-cU-cK1">
@@ -190,6 +194,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uuu-5w-LHV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dy8-dl-rt5">
+                    <connections>
+                        <action selector="ontap:" destination="yt3-Io-zlh" id="1ha-0b-JbO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-613.04347826086962" y="812.94642857142856"/>
         </scene>
@@ -288,6 +297,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="dw8-uy-yg1" firstAttribute="leading" secondItem="Md4-Ue-bVZ" secondAttribute="leading" id="1qH-cn-9j5"/>
                             <constraint firstItem="wXC-AN-b36" firstAttribute="top" secondItem="SdZ-db-dRw" secondAttribute="top" constant="15" id="2Vg-Fi-jIE"/>
@@ -326,6 +336,9 @@
                             <constraint firstItem="SdZ-db-dRw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wXC-AN-b36" secondAttribute="trailing" symbolic="YES" id="yXr-Ow-Rbn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SdZ-db-dRw"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="i8w-VA-ftF" appends="YES" id="Ffg-ft-YQw"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Categorias" id="rOa-ac-pJE"/>
                     <connections>
@@ -337,6 +350,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgd-9i-EIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="i8w-VA-ftF">
+                    <connections>
+                        <action selector="Ontap:" destination="pUt-Iq-MD1" id="j8l-FQ-uyH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1141" y="-300"/>
         </scene>
@@ -379,7 +397,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZa-y3-80Q">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="em Horas (ex 0.3h)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZa-y3-80Q">
                                 <rect key="frame" x="196" y="182" width="198" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -396,13 +414,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Insera aqui os passos a seguir" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rdN-Bu-R1G">
-                                <rect key="frame" x="18" y="484" width="374" height="378"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="69H-vo-d3N">
                                 <rect key="frame" x="20" y="256" width="374" height="190"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -417,14 +428,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II9-IW-KB6">
-                                <rect key="frame" x="327" y="140" width="75" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Ad. Cat."/>
-                                <connections>
-                                    <segue destination="pUt-Iq-MD1" kind="show" id="hjc-x5-COz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fco-kH-sJz">
                                 <rect key="frame" x="237" y="222" width="155" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -433,6 +436,21 @@
                                     <segue destination="6dk-mh-F2H" kind="show" identifier="Ingsegue" id="Pbc-Ef-zHn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II9-IW-KB6">
+                                <rect key="frame" x="327" y="140" width="75" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Ad. Cat."/>
+                                <connections>
+                                    <segue destination="pUt-Iq-MD1" kind="show" id="hjc-x5-COz"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Insera aqui os passos a seguir" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rdN-Bu-R1G">
+                                <rect key="frame" x="18" y="484" width="374" height="378"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
@@ -550,6 +568,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="du2-ra-GgA" firstAttribute="trailing" secondItem="cjc-oP-drI" secondAttribute="trailing" constant="340" id="IF6-8t-3Fv"/>
                             <constraint firstItem="du2-ra-GgA" firstAttribute="trailing" secondItem="Y6d-LW-Rl3" secondAttribute="trailing" constant="20" id="O2R-TM-8i5"/>
@@ -571,6 +590,9 @@
                             <constraint firstItem="76b-G2-1OH" firstAttribute="leading" secondItem="du2-ra-GgA" secondAttribute="leading" constant="20" id="xCi-uw-9I5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="du2-ra-GgA"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8Ks-PY-a15" appends="YES" id="SEW-kM-dHo"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Ingrediente" id="Bgy-tT-i9f">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IFC-jx-QiI">
@@ -586,6 +608,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhr-5d-np6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8Ks-PY-a15">
+                    <connections>
+                        <action selector="ontap:" destination="6dk-mh-F2H" id="Etm-bk-BOI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1140.5797101449277" y="383.70535714285711"/>
         </scene>

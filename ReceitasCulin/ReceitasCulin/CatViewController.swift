@@ -28,6 +28,7 @@ class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         tfTipo.inputView = pickerTipo
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        //navigationItem.backBarButtonItem?.title = "Back"
     }
     
     @IBAction func Remfunc(_ sender: Any) {
@@ -216,5 +217,8 @@ class CatViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         tfTipo.text = ""
         newval.text = ""
         
+    }
+    @IBAction func Ontap(_ sender: Any) {
+        view.endEditing(true)
     }
 }

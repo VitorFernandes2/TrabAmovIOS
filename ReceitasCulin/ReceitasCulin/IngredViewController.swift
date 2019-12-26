@@ -66,4 +66,7 @@ class IngredViewController: UIViewController{
     }
     
     
+    @IBAction func ontap(_ sender: Any) {
+        view.endEditing(true)
+    }
 }

@@ -37,6 +37,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         Catinpt.inputView = pickerTipo
         self.InfVT.delegate = self
         self.InfVT.dataSource = self
+        Catinpt.text = Receita.categorias.first
         // Do any additional setup after loading the view.
     }
     @IBAction func BtnPress(_ sender: Any) {
@@ -56,6 +57,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             self.present(alert, animated: true, completion: nil)
             return
         }
+        
+        //verifica categoria
+        var verif : Bool = false
+        for cb in Receita.categorias{
+            if(cate == cb){
+                verif = true
+                break
+            }
+        }
+        
+        if(verif == false){
+            let alert = UIAlertController(title: "Alerta", message: "Entre uma Categoria valida", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        // ---
         
         let tempo:Double? = Double(tempoString!) // converte pra Int
         
