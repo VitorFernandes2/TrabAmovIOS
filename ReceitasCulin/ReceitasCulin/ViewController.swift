@@ -154,5 +154,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         InfVT.reloadData()
     }
     
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
 }
 

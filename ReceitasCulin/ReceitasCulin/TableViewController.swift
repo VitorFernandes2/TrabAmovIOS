@@ -13,10 +13,13 @@ class TableViewController: UITableViewController, AtualizaReceita{
     //var emptyDoubles: [Receita] = []
     let app = UIApplication.shared.delegate as! AppDelegate
     var pos : String = ""
+    var tipoord : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Tamanho do array : " , app.listaReceitas.count)
+        //tipoord = 0 // 0 se ordenado por nome, 1 se por categoria tempo de realizacao
+        Ordenar()
     }
 
     // MARK: - Table view data source
@@ -163,8 +166,97 @@ class TableViewController: UITableViewController, AtualizaReceita{
     
 
     func UpdateRData() {
-        print(3)
-       tableView.reloadData()
+        print("update por protocol")
+        Ordenar()
+        tableView.reloadData()
+    }
+    
+    func Ordenar(){
+        if(tipoord == 0){
+            ordenarpornome()
+        }else if (tipoord == 1){
+            ordenarportempo()
+        }
+        tableView.reloadData()
+    }
+    
+    func ordenarpornome(){
+        self.title = "Receitas (por: nome)"
+        print("tamanho nome pre ordenado : " , app.listaReceitas.count)
+        
+        var arraytemp : [String] = []
+        
+        for c in app.listaReceitas{
+            arraytemp.append(c.nome)
+        }
+        
+        arraytemp.sort()
+        
+        var outtemp : [Receita] = []
+        
+        for a in arraytemp{
+            var pos : Int = 0
+            for b in app.listaReceitas{
+                
+                if(a == b.nome){
+                    outtemp.append(app.listaReceitas[pos])
+                    break
+                }
+                pos += 1
+            }
+            
+        }
+        app.listaReceitas = outtemp
+        
+        print("tamanho nome pos ordenado : " , app.listaReceitas.count)
+        
+    }
+    
+    func ordenarportempo(){
+        self.title = "Receitas (por: tempo)"
+        print("tamanho tempo pre ordenado : " , app.listaReceitas.count)
+        
+        var arraytemp : [Double] = []
+        
+        for c in app.listaReceitas{
+            arraytemp.append(c.temporealiz)
+        }
+        
+        arraytemp.sort()
+        
+        var outtemp : [Receita] = []
+        
+        for a in arraytemp{
+            var pos : Int = 0
+            for b in app.listaReceitas{
+                
+                if(a == b.temporealiz){
+                    outtemp.append(app.listaReceitas[pos])
+                    break
+                }
+                pos += 1
+            }
+            
+        }
+        app.listaReceitas = outtemp
+        
+        print("tamanho tempo pos ordenado : " , app.listaReceitas.count)
+    }
+    
+    @IBAction func btnfiltros(_ sender: Any) {
+        
+        if (tipoord == 0){
+            tipoord = 1
+            Ordenar()
+            return
+        }
+        
+        if(tipoord == 1){
+            tipoord = 0
+            Ordenar()
+            return
+        }
+        
     }
     
 }

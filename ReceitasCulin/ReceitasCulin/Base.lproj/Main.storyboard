@@ -31,7 +31,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Receitas" id="Dof-Ay-bRW">
-                        <barButtonItem key="leftBarButtonItem" title="Filtros" id="5f7-hv-9Jr"/>
+                        <barButtonItem key="leftBarButtonItem" title="Filtros" id="5f7-hv-9Jr">
+                            <connections>
+                                <action selector="btnfiltros:" destination="pYG-YT-qSa" id="nCZ-yg-M0U"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fyY-gW-blN">
                             <connections>
                                 <segue destination="sSx-Yd-DJe" kind="show" identifier="adicionarsegue" id="C43-Do-TNs"/>
@@ -431,6 +435,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ubt-lP-o6W" firstAttribute="top" secondItem="bVz-qu-fQm" secondAttribute="bottom" constant="8" id="1XG-5Q-JF7"/>
                             <constraint firstItem="2wk-nE-T1g" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X0E-cJ-hxa" secondAttribute="trailing" symbolic="YES" id="2i0-t2-08Z"/>
@@ -473,6 +478,9 @@
                             <constraint firstItem="X0E-cJ-hxa" firstAttribute="leading" secondItem="2wk-nE-T1g" secondAttribute="leading" constant="20" id="yhP-fI-Tqy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2wk-nE-T1g"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4j8-Kh-vSu" appends="YES" id="xr7-N2-UTP"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Adicionar" id="5jC-72-1qW">
                         <barButtonItem key="backBarButtonItem" title="voltar" id="ZdE-FE-lwv"/>
@@ -491,6 +499,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8I-L0-Jnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4j8-Kh-vSu">
+                    <connections>
+                        <action selector="onTap:" destination="sSx-Yd-DJe" id="FjV-EX-Ak7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="260.86956521739131" y="44.866071428571423"/>
         </scene>
@@ -594,6 +607,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pbc-Ef-zHn"/>
+        <segue reference="Vc0-Kx-rfX"/>
     </inferredMetricsTieBreakers>
 </document>
