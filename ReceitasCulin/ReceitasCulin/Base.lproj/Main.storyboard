@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xcK-gp-3yx">
-                                <rect key="frame" x="20" y="258" width="362" height="294"/>
+                                <rect key="frame" x="20" y="258" width="362" height="187"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditIngident" id="kUb-x2-8Zz">
@@ -112,18 +112,11 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GP0-aq-n55">
-                                <rect key="frame" x="20" y="560" width="102" height="27"/>
+                                <rect key="frame" x="20" y="453" width="102" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-zV-YOU">
-                                <rect key="frame" x="20" y="595" width="362" height="267"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAE-bj-YeG">
                                 <rect key="frame" x="232" y="220" width="150" height="30"/>
                                 <state key="normal" title="Adicionar Ingrediente:"/>
@@ -131,6 +124,13 @@
                                     <segue destination="6dk-mh-F2H" kind="show" identifier="editingsegue" id="Vc0-Kx-rfX"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-zV-YOU">
+                                <rect key="frame" x="20" y="488" width="362" height="374"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -141,7 +141,7 @@
                             <constraint firstItem="p3p-uy-bY1" firstAttribute="leading" secondItem="J59-pQ-HFQ" secondAttribute="leading" constant="20" id="BH5-Qp-xlG"/>
                             <constraint firstItem="yrg-zV-YOU" firstAttribute="top" secondItem="GP0-aq-n55" secondAttribute="bottom" constant="8" id="C28-Pf-kSm"/>
                             <constraint firstItem="J59-pQ-HFQ" firstAttribute="trailing" secondItem="xcK-gp-3yx" secondAttribute="trailing" constant="32" id="EKN-m9-an6"/>
-                            <constraint firstItem="J59-pQ-HFQ" firstAttribute="bottom" secondItem="xcK-gp-3yx" secondAttribute="bottom" constant="310" id="GN9-qo-Jb0"/>
+                            <constraint firstItem="J59-pQ-HFQ" firstAttribute="bottom" secondItem="xcK-gp-3yx" secondAttribute="bottom" constant="417" id="GN9-qo-Jb0"/>
                             <constraint firstItem="xcK-gp-3yx" firstAttribute="top" secondItem="cl4-1P-p7F" secondAttribute="bottom" constant="8" id="IFm-Ix-52G"/>
                             <constraint firstItem="I4g-k4-sEX" firstAttribute="centerY" secondItem="p3p-uy-bY1" secondAttribute="centerY" id="J6c-Cf-nZO"/>
                             <constraint firstItem="3N2-3S-edS" firstAttribute="top" secondItem="q9f-FX-PO4" secondAttribute="bottom" constant="8" id="KJt-8U-WhM"/>
